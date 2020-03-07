@@ -1,0 +1,32 @@
+{
+  "name": "chat-room-userapis",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/main.ts",
+    "start": "ts-node src/main.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IsQiao/chat-room-userapis"
+  },
+  "author": "qiao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IsQiao/chat-room-userapis/issues"
+  },
+  "homepage": "https://github.com/IsQiao/chat-room-userapis#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.3",
+    "@types/node": "^13.9.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  }
+}
