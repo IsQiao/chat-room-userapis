@@ -3,6 +3,10 @@ import { Controller, Get, Route, Query, OperationId, Tags } from 'tsoa';
 @Route('/user')
 @Tags('用户API')
 export class UserController extends Controller {
+    /**
+     * 
+     * @param ids 多个用户Id(数组)
+     */
     @Get('usersInfo')
     public async getUsersInfo(@Query() ids: string[]): Promise<UserInfo[]> {
         return ids.map(x => {
