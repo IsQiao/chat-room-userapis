@@ -1,14 +1,28 @@
-import { Controller, Get, Route } from 'tsoa';
+import { Controller, Get, Route, Query, OperationId, Tags } from 'tsoa';
 
 @Route('/user')
+@Tags('用户API')
 export class UserController extends Controller {
-    @Get('')
-    public async index() {
-        return { msg: 'user' };
+    @Get('usersInfo')
+    public async getUsersInfo(@Query() ids: string[]): Promise<UserInfo[]> {
+        return ids.map(x => {
+            return {
+                id: x,
+                nickName: `nickName_${x}`,
+                activeValue: 66,
+                avatar: "avatar01.jpg"
+            }
+        });
     }
+}
 
-    @Get('/msg')
-    public msg() {
-        return { msg: 'user message' };
-    }
+export interface UserInfo {
+    /** 平台id */
+    id: string;
+    /** 昵称 */
+    nickName: string;
+    /** 活跃值 */
+    activeValue: number;
+    /** 头像 */
+    avatar: string;
 }
