@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "ts-node-dev --respawn src/app.ts",
     "start": "ts-node src/app.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "tsoa:gen": "yarn tsoa swagger && yarn tsoa routes",
+    "serve": "npm run tsoa:gen && npm run start"
   },
   "repository": {
     "type": "git",
