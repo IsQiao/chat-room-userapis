@@ -1,15 +1,16 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
-    }
     stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
+        stage('Checkout') {
+            checkout scm
+        }
+        stage('Environment') {
+            sh 'git --version'
+            echo "Branch: ${env.BRANCH_NAME}"
+            sh 'docker -v'
+            sh 'printenv'
+        }
+        stage('Build') {
+            sh 'docker-compose up --build'
         }
     }
 }
