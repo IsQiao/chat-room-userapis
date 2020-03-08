@@ -4,10 +4,13 @@ node {
       checkout scm
     }
     stage('Environment') {
-      sh 'git --version'
-      echo "Branch: ${env.BRANCH_NAME}"
-      sh 'docker -v'
-      sh 'printenv'
+        sh 'git --version'
+        sh 'docker -v'
+        sh 'printenv'
+    }
+    stage('Deploy'){
+        sh 'docker-compose up --build'
+        sh 'docker-compose up -d'
     }
   }
   catch (err) {
