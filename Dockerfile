@@ -3,9 +3,9 @@ FROM node:alpine
 WORKDIR /usr/src/app
 COPY package*.json ./
 
-RUN yarn install
+RUN npm install
 
 COPY . .
 
 EXPOSE 3000
-CMD [ "yarn", "run", "serve" ]
+CMD [ "npm", "run", "serve" ]
