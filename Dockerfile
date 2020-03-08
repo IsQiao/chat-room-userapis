@@ -10,4 +10,6 @@ COPY . .
 EXPOSE 3000
 
 RUN mkdir -p './api/dist'
-CMD [ "npm", "run", "serve" ]
+RUN npm run tsoa:gen
+
+CMD [ "npm", "run", "start" ]
