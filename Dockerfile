@@ -8,4 +8,6 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
+
+RUN mkdir './api/dist'
 CMD [ "npm", "run", "serve" ]
