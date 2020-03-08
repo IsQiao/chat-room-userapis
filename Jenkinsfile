@@ -8,6 +8,9 @@ node {
         sh 'docker -v'
         sh 'printenv'
     }
+    stage('IsLast'){
+        sh 'cat src/controllers/user.controller.ts'
+    }
     stage('Deploy'){
         sh 'docker-compose down'
         sh 'docker-compose up -d'
