@@ -10,7 +10,6 @@ node {
     }
     stage('Deploy'){
         sh 'docker-compose down'
-        sh 'docker-compose up --build'
         sh 'docker-compose up -d'
     }
   }
