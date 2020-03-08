@@ -1,8 +1,8 @@
 version: "3.2"
 services:
   web:
-    image: chatroom-apis2
-    container_name: chatroom-apis2
+    image: chatroom-apis
+    container_name: chatroom-apis
     build: .
     ports:
       - "3000:3000"
