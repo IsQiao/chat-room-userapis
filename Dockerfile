@@ -9,5 +9,5 @@ COPY . .
 
 EXPOSE 3000
 
-RUN mkdir './api/dist'
+RUN mkdir -p './api/dist'
 CMD [ "npm", "run", "serve" ]
