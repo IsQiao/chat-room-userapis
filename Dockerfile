@@ -10,6 +10,7 @@ COPY . .
 EXPOSE 3000
 
 RUN mkdir -p './api/dist'
+RUN mkdir -p './src/routes'
 
 RUN npm run tsoa:gen   
 
